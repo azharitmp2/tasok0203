@@ -35,6 +35,17 @@
                 Graduations
             </a>
 
+        @if (auth()->user()?->student)
+                <a href="{{ route('graduations.students.show', [auth()->user()->student->graduation, auth()->user()->student]) }}" 
+                   wire:navigate
+                   class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition duration-150 {{ request()->routeIs('graduations.students.show') && !auth()->user()->isAdmin() ? 'bg-indigo-50 text-indigo-700 font-semibold shadow-xs' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900' }}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    My Registration
+                </a>
+            @endif
+
         </div>
 
         <div class="border-t border-gray-100 p-4 bg-gray-50/50">

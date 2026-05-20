@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Notifications\Notifiable; // ← New Import
 
 class Student extends Model
 {
     use HasFactory;
     use HasUuids;
+    use Notifiable;
 
     protected $fillable = [
         'graduation_id', 'user_id',

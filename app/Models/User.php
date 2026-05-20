@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Student;
 
 class User extends Authenticatable
 {
@@ -32,6 +33,25 @@ class User extends Authenticatable
     public function getRouteKeyName(): string
     {
         return 'uuid';
+    }
+
+    /**
+     * The "booted" method of the model.
+     */
+    protected static function booted(): void
+    {
+        static::created(function (User $user): void {
+            // Akaun Admin tidak dihubungkan dengan mana-mana profil Student
+            if ($user->is_admin) {
+                return;
+            }
+
+            // Jalankan satu UPDATE SQL secara senyap untuk hubungkan akaun
+            Student::query()
+                ->where('email', $user->email)
+                ->whereNull('user_id')
+                ->update(['user_id' => $user->id]);
+        });
     }
 
     protected function casts(): array
