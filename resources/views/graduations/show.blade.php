@@ -15,6 +15,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             
+    <x-breadcrumbs :links="[
+            'Graduations' => route('graduations.index'),
+            $graduation->title => null // Last item has null URL so it stays text-only
+        ]" />
+
             @if (session('status'))
                 <div class="p-4 bg-green-100 border border-green-200 text-green-800 rounded-lg shadow-sm">
                     {{ session('status') }}
