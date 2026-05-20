@@ -4,7 +4,7 @@
             <a href="{{ route('dashboard') }}" wire:navigate class="flex items-center">
                 <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
             </a>
-            <span class="font-bold text-lg text-gray-800 tracking-tight">GradSystem</span>
+            <span class="font-bold text-lg text-gray-800 tracking-tight">KonvoJTM</span>
         </div>
 
         <div class="flex items-center md:hidden">
