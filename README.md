@@ -1,4 +1,4 @@
-# Manual Pengguna: Graduation Registration System
+# Manual Pengguna: Graduation Registration System KONVOJTM
 ### Panduan Pengoperasian Sistem Untuk Pihak Pentadbir (Admin) & Portal Urus Diri Pelajar (konvojtm)
 
 [cite_start]Manual ini disediakan khas bagi membimbing dua kelompok pengguna utama sistem: **Pihak Pentadbir (Admin)** yang bertanggungjawab menguruskan keseluruhan acara konvokesyen dan mengesahkan pembayaran, serta **Pelajar** yang akan menggunakan portal kendiri bagi mengemas kini profil dan menghantar bukti pembayaran[cite: 452].
